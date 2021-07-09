@@ -6,8 +6,9 @@ name = "pypi"
 [packages]
 speechrecognition = "*"
 pyttsx3 = "==2.71"
-pyaudio = "*"
 python-dotenv = "*"
+pipwin = "*"
+pyaudio = "*"
 
 [dev-packages]
 

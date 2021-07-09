@@ -11,6 +11,19 @@ def main():
     "Main function to run"
     print("Started ...")
     try:
+        
+        # voice_input = getVoiceInput()
+        # if "lock" in voice_input:
+        #     print('locking PC...')
+        #     speak('Locking your computer')
+        #     os.system("Rundll32.exe user32.dll,LockWorkStation")
+
+        # elif "shutdown" in voice_input or "turn off" in voice_input:
+        #     print('shutting down PC...')
+        #     speak('Shutting Down your computer')
+        #     os.system("shutdown /s /t 30")
+
+        speak(f"Do you want to lock your computer, {user}?")
         controller()
     except Exception as err:
         print(f'error : {err}')
@@ -18,17 +31,19 @@ def main():
 
 
 def controller():
-    speak(f"Hey django here, Do you want to lock your computer, {user}?")
-
     voice_input = getVoiceInput()
+
     if "yes" in voice_input:
         print('locking PC...')
         speak('Locking your computer')
         os.system("Rundll32.exe user32.dll,LockWorkStation")
+
     elif "no" in voice_input:
-        speak('Okay standing by...')
+        speak('Okay Bye then....')
+
     else:
-        speak('I do not understand your command')
+        speak('I do not understand your command, please repeat your command')
+        controller()
 
 
 
@@ -53,7 +68,6 @@ def getVoiceInput():
             recognized_audio = recognizer.recognize_google(audio)
 
             print(f'User said : {recognized_audio}')
-
         except Exception as err:
             print(err) 
 
