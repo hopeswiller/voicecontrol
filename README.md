@@ -1,4 +1,4 @@
-# VoiceControl
+# Voice Control
 
 > {}
 
