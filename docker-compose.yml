@@ -8,7 +8,7 @@ services:
       dockerfile: ./Dockerfile
       cache_from:
         - "elment/voicecontrol:latest"
-    volumes: 
-      - ./:/app
+    # volumes: 
+      # - ./:/app
     environment: 
       - user=${user}
