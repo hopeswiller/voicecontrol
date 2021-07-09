@@ -1,0 +1,14 @@
+version: '3.4'
+
+services:
+  botapi:
+    image: elment/voicelock
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+      cache_from:
+        - "elment/voicelock:latest"
+    volumes: 
+      - ./:/app
+    environment: 
+      - user=${user}

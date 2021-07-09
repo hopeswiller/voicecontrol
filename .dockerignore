@@ -1,0 +1,16 @@
+Dockerfile*
+docker-compose.*
+README.md
+.dockerignore
+.git
+.gitignore
+.vscode
+.env
+__pycache__
+*/__pycache__
+Pipfile
+Pipfile.*
+requirements.sh
+start.sh
+docs/
+LICENSE
