@@ -18,8 +18,9 @@ This project is primarily developed to check .....
 ## Technologies
 
 - Python - version 3.8
-- pyttsx3 - version
-- speechrecognition - version
+- pyttsx3 - version 2.71
+- pyaudio- version 0.2.11
+- speechrecognition - version 3.8.1
 
 
 ## Setup
