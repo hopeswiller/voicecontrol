@@ -34,7 +34,6 @@ Run python src/app.py
 
 - #### Docker
 
-Comment out line 11 and line 13 in src/monitor.py when running docker-compose file
 Run docker-compose up
 
 
