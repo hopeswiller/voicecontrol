@@ -1,6 +1,6 @@
 FROM python:3.8.2-buster AS build-stage
 
-LABEL maintainer="David Boateng Adams <davidba941@gmail.com>"
+LABEL maintainer="David Boateng Adams <davidba941@gmail.com> <https://github.com/hopeswiller/voicecontrol>"
 
 # Keeps Python from generating .pyc files in the container
 ENV PYTHONDONTWRITEBYTECODE=1
