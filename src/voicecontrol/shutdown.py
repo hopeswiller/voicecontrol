@@ -5,19 +5,19 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-user = os.getenv("user")
+user = os.getenv("user") if os.getenv("user") else "hopeswiller"
 
 def main():
     "Main function to run"
     print("Started ...")
     try:
-        shutdown()
+        controller()
     except Exception as err:
         print(f'error : {err}')
 
 
 
-def shutdown():
+def controller():
     speak(f"Hey django here, Do you want to lock your computer, {user}?")
 
     voice_input = getVoiceInput()

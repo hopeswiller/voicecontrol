@@ -33,8 +33,8 @@ FROM python:3.8.2-buster
 
 WORKDIR /app
 
-RUN apk add --no-cache --update postgresql-dev=13.3-r0 --repository=http://dl-cdn.alpinelinux.org/alpine/v3.14/main 
-RUN apk add --no-cache --upgrade figlet
+# RUN apk add --no-cache --update postgresql-dev=13.3-r0 --repository=http://dl-cdn.alpinelinux.org/alpine/v3.14/main 
+# RUN apk add --no-cache --upgrade figlet
 
 COPY --from=build-stage /usr/local /usr/local
 COPY --from=build-stage /app /app
