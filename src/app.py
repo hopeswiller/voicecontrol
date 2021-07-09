@@ -1,4 +1,4 @@
-from voicecontrol import shutdown
+from voicecontrol import controller
 
 if __name__ == '__main__':
-    shutdown.main()
+    controller.main()
