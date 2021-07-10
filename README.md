@@ -21,6 +21,7 @@ This project is primarily developed to check .....
 - pyttsx3 - version 2.71
 - pyaudio- version 0.2.11
 - speechrecognition - version 3.8.1
+- OpenWeather Map API - <https://openweathermap.org/api>
 
 
 ## Setup
@@ -28,17 +29,20 @@ This project is primarily developed to check .....
 Setup can be done manually or via Docker which is recommended
 
 - #### Manual
+Remove pywin32==301 from requirements file if any as it's only supported till python 3.3
 
-Run pip install -r requirements.txt.\
-Run ./start.sh or python src/app.py 
+    >_ pip install -r requirements.txt
+    >_ ./start.sh
+
 > Having installations issues with pyaudio? 
 
-    pip install pipwin
-    pipwin install pyaudio
+    >_ pip install pipwin
+    >_ pipwin install pyaudio
 
 - #### Docker
+>
 
-Run docker-compose up
+    >_ docker-compose up
 
 
 ## Features
