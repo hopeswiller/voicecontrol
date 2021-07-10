@@ -10,5 +10,5 @@ services:
         - "elment/voicecontrol:latest"
     volumes: 
       - ./src:/app
-    # environment: 
-      # - user=${user}
+    environment: 
+      - OPEN_WEATHER_MAP_API_KEY=${OPEN_WEATHER_MAP_API_KEY}

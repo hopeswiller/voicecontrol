@@ -94,7 +94,7 @@ def speak(speech):
 
 def checkWeatherStatus():
     geo = geocoder.ip("me")
-    API_KEY = os.getenv('API_KEY')
+    API_KEY = os.getenv('OPEN_WEATHER_MAP_API_KEY')
     exlude = "hourly,daily"  # weather data to exlude
     try:
         resp = requests.get(
