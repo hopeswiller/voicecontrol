@@ -8,7 +8,10 @@ updates:
   - package-ecosystem: "pipenv" # See documentation for possible values
     directory: "/" # Location of package manifests
     schedule:
-      interval: "daily"
+      interval: "weekly"
+    commit-message:
+      # Prefix all commit messages with "npm"
+      prefix: "update"
     allow:
       # Allow only direct updates for
       # Django and any packages starting "python-dotenv"
@@ -17,7 +20,9 @@ updates:
 
       - dependency-name: "geocoder"
         dependency-type: "direct"
-       
+
       - dependency-name: "pyfiglet"
         dependency-type: "direct"
-  
+
+      - dependency-name: "speechrecognition"
+        dependency-type: "direct"
