@@ -29,8 +29,12 @@ Setup can be done manually or via Docker which is recommended
 
 - #### Manual
 
-Run pip install -r requirements.txt
-Run python src/app.py
+Run pip install -r requirements.txt.\
+Run ./start.sh or python src/app.py 
+> Having installations issues with pyaudio? 
+
+    pip install pipwin
+    pipwin install pyaudio
 
 - #### Docker
 
@@ -41,7 +45,10 @@ Run docker-compose up
 
 List of features ready and TODOs for future development
 
-- [x] Receive test
+- [x] Interact with an assistant (Will)
+- [x] Check weather status of current location
+- [x] Shutdown your computer
+- [x] Lock you computer
 
 
 TODOs:

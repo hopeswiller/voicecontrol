@@ -10,5 +10,5 @@ services:
         - "elment/voicecontrol:latest"
     # volumes: 
       # - ./:/app
-    environment: 
-      - user=${user}
+    # environment: 
+      # - user=${user}

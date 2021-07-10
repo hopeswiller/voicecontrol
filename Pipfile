@@ -7,8 +7,9 @@ name = "pypi"
 speechrecognition = "*"
 pyttsx3 = "==2.71"
 python-dotenv = "*"
-pipwin = "*"
 pyaudio = "*"
+geocoder = "*"
+pyfiglet = "*"
 
 [dev-packages]
 
