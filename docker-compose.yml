@@ -1,14 +1,14 @@
 version: '3.4'
 
 services:
-  botapi:
+  voicecontrol:
     image: elment/voicecontrol
     build:
       context: .
       dockerfile: ./Dockerfile
       cache_from:
         - "elment/voicecontrol:latest"
-    # volumes: 
-      # - ./:/app
+    volumes: 
+      - ./src:/app
     # environment: 
       # - user=${user}

@@ -7,10 +7,9 @@ import geocoder
 import requests
 from pyfiglet import Figlet
 import speech_recognition as rec
+from dotenv import load_dotenv
 
-# from dotenv import load_dotenv
-
-# load_dotenv()
+load_dotenv()
 
 
 triggers = ["hey will", "hi will", "hello will", "hey", "hi"]
@@ -24,7 +23,10 @@ def main():
     """
     start_time = time.strftime("%m/%d/%Y, %H:%M:%S")
     print(f'Application StartTime: {start_time} \n {Figlet().renderText("Voice Control")}')
+    print("Initiating microphone...\n")
     try:
+        # for index, name in enumerate(rec.Microphone.list_microphone_names()):
+            # print("Microphone with name \"{1}\" found for `Microphone(device_index={0})`".format(index, name))
         initiate()
     except Exception as err:
         print(f"error : {err}")
@@ -59,13 +61,13 @@ def getVoiceInput():
 
     with rec.Microphone() as mic:
         print("Listening...")
-        #  threshold seconds of no voice input to complete command
-        recognizer.pause_threshold = 0.5
+        #  minimum length of silence (in seconds) that will register as the end of a phrase
+        recognizer.pause_threshold = 0.8
         # set the energy_threshold to a good value automatically.
-        # recognizer.adjust_for_ambient_noise()
+        # listen for 1 second to calibrate the energy threshold for ambient noise levels
+        recognizer.adjust_for_ambient_noise(mic)
         audio = recognizer.listen(mic)
 
-        # voice command identified
         try:
             print("Recognising your voice")
             # default language is en-us
@@ -92,7 +94,7 @@ def speak(speech):
 
 def checkWeatherStatus():
     geo = geocoder.ip("me")
-    API_KEY = "7214167af93b5399a9dfd2d2f83b675d"
+    API_KEY = os.getenv('API_KEY')
     exlude = "hourly,daily"  # weather data to exlude
     try:
         resp = requests.get(
@@ -134,7 +136,7 @@ def shutDownPC():
         os.system("shutdown /s /t 30")
 
     elif "no" in voice_input or "nope" in voice_input:
-        speak(f"Okay bye then, see ya")
+        speak(f"Okay bye then, see ya!")
     else:
         speak(f"Sorry, I do not understand,please repeat")
         shutDownPC()

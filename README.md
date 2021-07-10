@@ -39,7 +39,7 @@ Remove pywin32==301 from requirements file if any as it's only supported till py
     >_ pip install pipwin
     >_ pipwin install pyaudio
 
-- #### Docker
+- #### Docker - In Progres
 >
 
     >_ docker-compose up
@@ -60,6 +60,7 @@ TODOs:
 - [ ] Configure sphinx docs
 - [ ] Add pre-commit hooks
 - [ ] Add more tests
+- [ ] Solve docker build issues
 
 
 ## Status
