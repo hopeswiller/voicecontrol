@@ -1,6 +1,6 @@
 # Voice Control
 
-> A Voice Control System ...
+> A Voice Recognition System that takes voice commands from users to either shutdown or lock your computer. Also gives current weather status
 
 ## Table of contents
 
@@ -12,7 +12,7 @@
 
 ## General info
 
-This project is primarily developed to check .....
+This project is primarily developed to help .....
 
 
 ## Technologies
@@ -34,7 +34,7 @@ Remove pywin32==301 from requirements file if any as it's only supported till py
     >_ pip install -r requirements.txt
     >_ ./start.sh
 
-> Having installations issues with pyaudio? 
+> Having installations issues with pyaudio on windows? 
 
     >_ pip install pipwin
     >_ pipwin install pyaudio

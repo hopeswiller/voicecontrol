@@ -12,7 +12,7 @@ from dotenv import load_dotenv
 load_dotenv()
 
 
-triggers = ["hey will", "hi will", "hello will", "hey", "hi"]
+triggers = ["hey will", "hi will", "hello", "hey", "hi","will"]
 
 responses = ["hey there", "hi What's up?", "hi there", "What's good?"]
 
@@ -22,8 +22,7 @@ def main():
     Main function to run
     """
     start_time = time.strftime("%m/%d/%Y, %H:%M:%S")
-    print(f'Application StartTime: {start_time} \n {Figlet().renderText("Voice Control")}')
-    print("Initiating microphone...\n")
+    # print(f'Application StartTime: {start_time} \n {Figlet().renderText("Voice Control")}')
     try:
         # for index, name in enumerate(rec.Microphone.list_microphone_names()):
             # print("Microphone with name \"{1}\" found for `Microphone(device_index={0})`".format(index, name))
@@ -58,9 +57,10 @@ def getVoiceInput():
         Function to get voice input using recognizer and microphone
     """
     recognizer = rec.Recognizer()
+    print("Initiating microphone...\n")
 
     with rec.Microphone() as mic:
-        print("Listening...")
+        print("Mic Activated and listening...")
         #  minimum length of silence (in seconds) that will register as the end of a phrase
         recognizer.pause_threshold = 0.8
         # set the energy_threshold to a good value automatically.
@@ -71,12 +71,13 @@ def getVoiceInput():
         try:
             print("Recognising your voice")
             # default language is en-us
-            recognized_audio = ""
+            # recognized_audio = ""
             recognized_audio = recognizer.recognize_google(audio)
 
             print(f"User said : {recognized_audio}")
         except Exception as err:
-            print(err)
+            print(f'Error Occured recognising audio : {err}')
+            return "None"
 
     return recognized_audio
 
@@ -97,6 +98,7 @@ def checkWeatherStatus():
     API_KEY = os.getenv('OPEN_WEATHER_MAP_API_KEY')
     exlude = "hourly,daily"  # weather data to exlude
     try:
+        speak(f"Okay sure, Please standy while i process..")
         resp = requests.get(
             f"https://api.openweathermap.org/data/2.5/onecall?lat={geo.lat}&lon={geo.lng}&exclude={exlude}&appid={API_KEY}"
         )

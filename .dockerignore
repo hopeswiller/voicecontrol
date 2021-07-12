@@ -11,6 +11,5 @@ __pycache__
 Pipfile
 Pipfile.*
 requirements.sh
-start.sh
 docs/
 LICENSE

@@ -8,7 +8,7 @@ services:
       dockerfile: ./Dockerfile
       cache_from:
         - "elment/voicecontrol:latest"
-    volumes: 
-      - ./src:/app
+    # volumes: 
+      # - ./src:/app
     environment: 
       - OPEN_WEATHER_MAP_API_KEY=${OPEN_WEATHER_MAP_API_KEY}
