@@ -2,13 +2,16 @@ version: '3.4'
 
 services:
   voicecontrol:
-    image: elment/voicecontrol
+    image: voicecontrol:latest
     build:
       context: .
-      dockerfile: ./Dockerfile
-      cache_from:
-        - "elment/voicecontrol:latest"
+      dockerfile: Dockerfile
+      # cache_from:
+      #   - "elment/voicecontrol:latest"
     # volumes: 
       # - ./src:/app
+    devices:
+      - /dev/snd
     environment: 
       - OPEN_WEATHER_MAP_API_KEY=${OPEN_WEATHER_MAP_API_KEY}
+      - ALSA_CARD=${ALSA_CARD}

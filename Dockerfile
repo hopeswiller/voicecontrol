@@ -12,6 +12,8 @@ ARG USER=hopeswiller
 RUN apt-get update && \
     apt-get install libasound-dev libportaudio2 \
     libportaudiocpp0 portaudio19-dev python-pyaudio -y
+    
+RUN apt-get install libespeak-dev alsa-utils -y
 
 RUN apt-get clean && \
     rm -rf /var/lib/apt/lists/*
