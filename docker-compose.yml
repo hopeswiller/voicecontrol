@@ -5,7 +5,7 @@ services:
     image: voicecontrol:latest
     build:
       context: .
-      dockerfile: ./Dockerfile
+      dockerfile: Dockerfile
       # cache_from:
       #   - "elment/voicecontrol:latest"
     # volumes: 

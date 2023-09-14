@@ -41,11 +41,11 @@ Remove pywin32==301 from requirements file if any as it's only supported till py
 
 - ## Docker
 
-    You require the name of your recording sound device for this. To find it use `arecord -l | grep -i card`. You should get something similiar to `card 2: Generic_1 [HD-Audio Generic], device 0: ALC285 Analog [ALC285 Analog]`. In this case the name of the sound card is `Generic_l`. 
+    You require the name of your recording sound device for this. To find it use `arecord -l | grep -i card`. You should get something similiar to `card 2: Generic_1 [HD-Audio Generic], device 0: ALC285 Analog [ALC285 Analog]`. In this case the name of the sound card is `Generic_1`. 
     
     ```
     export ALSA_CARD=<your card name>
-    docker-compose up
+    docker-compose up --build
     ```
     
 
